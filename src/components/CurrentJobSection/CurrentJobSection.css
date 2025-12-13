@@ -1,0 +1,31 @@
+#current-job {
+  position: relative;
+  width: 100vw;
+
+  height: 20rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 20rem);
+    transform: translateX(-50%);
+    border-top: 3px solid rgb(27, 27, 27);
+  }
+
+  #current-job-text {
+    width: 30rem;
+    position: absolute;
+    right: 30rem;
+    top: 10rem;
+    padding-left: 20rem;
+  }
+
+  #lanyard-object {
+    position: absolute;
+    left: 0;
+    width: 60%;
+  }
+}
+
