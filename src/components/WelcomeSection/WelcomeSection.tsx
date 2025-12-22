@@ -1,33 +1,56 @@
-import TextType from '../TextType/TextType'
 import './WelcomeSection.css'
+import TextType from '../TextType/TextType'
+import { useEffect, useState } from 'react'
+import { TbCode } from 'react-icons/tb'
+import { LiaHorseHeadSolid } from 'react-icons/lia'
 
 function WelcomeSection() {
+  const [clickCount, setClickCount] = useState(0)
+  const [secret, setSecret] = useState(false)
+
+  const handleClick = () => {
+    const newCount = clickCount + 1
+    setClickCount(newCount)
+
+    if (newCount === 5) {
+      setSecret(true)
+      setClickCount(0)
+    }
+  }
+
+  useEffect(() => {
+    if (secret) {
+      const timer = setTimeout(() => {
+        setSecret(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [secret])
+
   return (
     <div id='welcome-text'>
+      <div onClick={handleClick}>
+        {secret ? <LiaHorseHeadSolid /> : <TbCode />}
+      </div>
+
       <TextType
         text={[
-          'Seja bem-vindo ao meu portifólio!',
-          'Conheça o meu trabalho!',
-          'Happy coding!',
+          'Seja bem-vindo ao meu portfólio.',
+          'Transformando ideias em código.',
+          'Segurança, código e estratégia.',
+          'Criando soluções com propósito.',
         ]}
-        typingSpeed={80}
-        pauseDuration={2000}
-        deletingSpeed={35}
-        variableSpeed={{ min: 40, max: 180 }}
-        showCursor={true}
-        cursorBlinkDuration={0.3}
         cursorCharacter='▌'
       />
 
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-        fugit inventore architecto eius aliquam repudiandae beatae in eos
-        eveniet, animi velit, rerum delectus error? Ex deleniti error
-        impedit excepturi iste.
+        Este é o meu espaço para compartilhar projetos, experiências e ideias
+        construídas ao longo da minha jornada como desenvolvedor. Aqui você vai
+        encontrar soluções pensadas com cuidado, segurança, performance e
+        aprendizado contínuo.
       </p>
     </div>
   )
 }
 
 export default WelcomeSection
-
