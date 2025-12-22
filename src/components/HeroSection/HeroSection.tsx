@@ -1,20 +1,37 @@
+import { useRef, useState, useLayoutEffect } from 'react'
+import { motion } from 'motion/react'
 import LiquidEther from '../LiquidEther/LiquidEther'
-import RotatingText from '../RotatingText/RotatingText'
+import RotatingText, {
+  type RotatingTextRef,
+} from '../RotatingText/RotatingText'
 import './HeroSection.css'
 
+const TEXTS = ['Full-Stack!', 'Back-End', 'Front-End', 'DevOps']
+const LIQUID_ETHER_COLORS = ['#ff0000', '#ff0000', '#520000']
+
 function HeroSection() {
+  const rotatingTextRef = useRef<RotatingTextRef>(null)
+  const measureRef = useRef<HTMLSpanElement>(null)
+  const [currentWidth, setCurrentWidth] = useState<number | 'auto'>('auto')
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useLayoutEffect(() => {
+    if (measureRef.current) {
+      const width = measureRef.current.offsetWidth
+      setCurrentWidth((prev) => (prev === width ? prev : width))
+    }
+  }, [currentIndex])
+
   return (
     <div id='panel'>
       <div id={'background'}>
         <LiquidEther
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          mouseForce={10}
-          cursorSize={100}
+          colors={LIQUID_ETHER_COLORS}
+          mouseForce={25}
+          cursorSize={50}
           isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
+          iterationsPoisson={40}
+          resolution={0.4}
           isBounce={false}
           autoDemo={true}
           autoSpeed={0.5}
@@ -28,22 +45,27 @@ function HeroSection() {
         <h1>Heitor Moreira</h1>
         <h2>
           Desenvolvedor{' '}
-          <RotatingText
-            className='rotating-text'
-            texts={[
-              'Full-Stack!',
-              'Back-End',
-              'Front-End',
-              'Mobile',
-              'DevOps',
-            ]}
-            rotationInterval={5000}
-            mainClassName=''
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '-120%' }}
-            staggerDuration={0.005}
-          />
+          <motion.span
+            className='rotating-text-wrapper'
+            animate={{ width: currentWidth }}
+            transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+          >
+            <span ref={measureRef} className='rotating-text-measure'>
+              {TEXTS[currentIndex]}
+            </span>
+            <RotatingText
+              ref={rotatingTextRef}
+              className='rotating-text'
+              texts={TEXTS}
+              rotationInterval={3000}
+              mainClassName=''
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-120%' }}
+              staggerDuration={0.005}
+              onNext={(index) => setCurrentIndex(index)}
+            />
+          </motion.span>
         </h2>
       </section>
     </div>
@@ -51,4 +73,3 @@ function HeroSection() {
 }
 
 export default HeroSection
-
