@@ -6,6 +6,7 @@ import { RiHomeGearLine } from 'react-icons/ri'
 import project1 from '../../assets/projects/maturit.png'
 import project2 from '../../assets/projects/cms.png'
 import project3 from '../../assets/projects/srh.png'
+import { IoIosArrowForward } from 'react-icons/io'
 
 function WindowButtons() {
   return (
@@ -39,17 +40,23 @@ function ProjectsSection() {
   return (
     <div id='projects'>
       <div className='projects-text'>
-        <h2>Meus projetos...</h2>
+        <h2>Meus projetos!</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab
-          sed eveniet aliquid quaerat libero earum quis dolorem fugiat.
-          Sapiente, soluta.
+          Reúno aqui alguns dos projetos que desenvolvi. Em cada um, busco focar
+          em performance, boas práticas e experiências bem pensadas. Cada
+          projeto conta uma história de aprendizado e evolução, representando
+          experimentos, desafios técnicos e ideias que se transformaram em
+          soluções de sucesso.
         </p>
 
         <Link to='/projects'>
-          <button>Ver mais</button>
+          <button className='projects-button'>
+            <span>Ver mais</span>
+            <IoIosArrowForward className='arrow-icon' />
+          </button>
         </Link>
       </div>
+
       <CardSwap verticalDistance={120} cardDistance={70} delay={6000}>
         {projects.map((project, index) => {
           return (
