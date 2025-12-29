@@ -3,17 +3,124 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   min-height: 100vh;
-  padding: 2rem;
+  width: 100vw;
+
+  margin: 5rem 0;
+  gap: 1rem;
+}
+
+.projects-title {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.projects-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 60rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  .switch-container {
+    flex-direction: column-reverse;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    svg {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(-3px);
+    }
+
+    .switch-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+  }
 }
 
 #bento {
-  /* position: relative; */
-
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 70em;
+  padding: 0 1rem;
 
-  /* background-color: rebeccapurple; */
-  width: 100vw;
+  transition: all 1s ease;
+}
+
+.sword-detail {
+  opacity: 0.5;
+  filter: invert(1);
+  position: fixed;
+  top: 50%;
+  pointer-events: none;
+
+  width: 18vw;
+  max-width: 22rem;
+
+  object-fit: cover;
+
+  height: 88vh;
+  max-height: 1000px;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.sword-left {
+  left: 0;
+  rotate: 180deg;
+}
+
+.sword-right {
+  right: 0;
 }

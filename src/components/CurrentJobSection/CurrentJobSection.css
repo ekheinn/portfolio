@@ -1,8 +1,10 @@
 #current-job {
   position: relative;
+
   width: 100vw;
 
-  height: 20rem;
+  display: flex;
+  justify-content: flex-end;
 
   &::after {
     content: '';
@@ -12,20 +14,32 @@
     width: calc(100% - 20rem);
     transform: translateX(-50%);
     border-top: 3px solid rgb(27, 27, 27);
+    z-index: 99;
   }
 
   #current-job-text {
-    width: 30rem;
-    position: absolute;
+    max-width: 38rem;
     right: 30rem;
     top: 10rem;
-    padding-left: 20rem;
+    padding: 10rem 22rem 0 0;
+    text-align: end;
   }
 
   #lanyard-object {
     position: absolute;
     left: 0;
-    width: 60%;
+    z-index: 9;
+
+    width: 100%;
+  }
+
+  .company-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .contract-info {
+    font-size: 0.8rem;
+    opacity: 0.5;
   }
 }
-

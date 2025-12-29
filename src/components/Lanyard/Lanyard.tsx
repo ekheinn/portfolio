@@ -20,7 +20,6 @@ import {
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import * as THREE from 'three'
 
-// replace with your own imports, see the usage snippet for details
 import cardGLB from '../../assets/card.glb'
 import lanyard from '../../assets/lanyard.png'
 
@@ -152,7 +151,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1])
   useSphericalJoint(j3, card, [
     [0, 0, 0],
-    [0, 1.45, 0],
+    [0, 1.5, 0],
   ])
 
   useEffect(() => {
@@ -207,7 +206,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[-3, 4, 0]}>
         <RigidBody
           ref={fixed}
           {...segmentProps}

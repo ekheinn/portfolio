@@ -1,17 +1,19 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react'
 import { gsap } from 'gsap'
 import './MagicBento.css'
+import TechBadge, { type TechBadgeProps } from '../TechBadge/TechBadge'
+import { MdOutlinePublic, MdOutlinePublicOff } from 'react-icons/md'
 
 export interface BentoCardProps {
   color?: string
   title?: string
   description?: string
-  label?: string
   textAutoHide?: boolean
   disableAnimations?: boolean
   detailedInfo?: string
   sourceCodeUrl?: string
   isPrivate?: boolean
+  technologies?: TechBadgeProps[]
 }
 
 export interface BentoProps {
@@ -31,7 +33,7 @@ export interface BentoProps {
 
 const DEFAULT_PARTICLE_COUNT = 12
 const DEFAULT_SPOTLIGHT_RADIUS = 300
-const DEFAULT_GLOW_COLOR = '132, 0, 255'
+const DEFAULT_GLOW_COLOR = '255, 0, 0'
 const MOBILE_BREAKPOINT = 768
 
 const defaultCardData: BentoCardProps[] = [
@@ -39,37 +41,37 @@ const defaultCardData: BentoCardProps[] = [
     color: '#060010',
     title: 'Analytics',
     description: 'Track user behavior',
-    label: 'Insights',
+    isPrivate: false,
   },
   {
     color: '#060010',
     title: 'Dashboard',
     description: 'Centralized data view',
-    label: 'Overview',
+    isPrivate: false,
   },
   {
     color: '#060010',
     title: 'Collaboration',
     description: 'Work together seamlessly',
-    label: 'Teamwork',
+    isPrivate: false,
   },
   {
     color: '#060010',
     title: 'Automation',
     description: 'Streamline workflows',
-    label: 'Efficiency',
+    isPrivate: false,
   },
   {
     color: '#060010',
     title: 'Integration',
     description: 'Connect favorite tools',
-    label: 'Connectivity',
+    isPrivate: false,
   },
   {
     color: '#060010',
     title: 'Security',
     description: 'Enterprise-grade protection',
-    label: 'Protection',
+    isPrivate: false,
   },
 ]
 
@@ -592,6 +594,15 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         {cardData.map((card, index) => {
           const isExpanded = expandedCardIndex === index
+          const cardLabel = card.isPrivate ? (
+            <>
+              <MdOutlinePublicOff /> Privado
+            </>
+          ) : (
+            <>
+              <MdOutlinePublic /> Público
+            </>
+          )
           const baseClassName = `magic-bento-card ${
             textAutoHide ? 'magic-bento-card--text-autohide' : ''
           } ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''} ${
@@ -638,7 +649,7 @@ const MagicBento: React.FC<BentoProps> = ({
                     <>
                       <div className='magic-bento-card__header'>
                         <div className='magic-bento-card__label'>
-                          {card.label}
+                          {cardLabel}
                         </div>
                         <button
                           className='magic-bento-card__close-btn'
@@ -658,6 +669,19 @@ const MagicBento: React.FC<BentoProps> = ({
                           <p className='magic-bento-card__detailed-info'>
                             {card.detailedInfo}
                           </p>
+                        )}
+                        {card.technologies && card.technologies.length > 0 && (
+                          <div className='tech-badges-container'>
+                            {card.technologies.map((tech, techIndex) => (
+                              <TechBadge
+                                key={techIndex}
+                                icon={tech.icon}
+                                title={tech.title}
+                                href={tech.href}
+                                color={tech.color}
+                              />
+                            ))}
+                          </div>
                         )}
                         {card.isPrivate ? (
                           <div className='magic-bento-card__private-notice'>
@@ -683,7 +707,7 @@ const MagicBento: React.FC<BentoProps> = ({
                     <>
                       <div className='magic-bento-card__header'>
                         <div className='magic-bento-card__label'>
-                          {card.label}
+                          {cardLabel}
                         </div>
                       </div>
                       <div className='magic-bento-card__content'>
@@ -819,7 +843,7 @@ const MagicBento: React.FC<BentoProps> = ({
               {isExpanded ? (
                 <>
                   <div className='magic-bento-card__header'>
-                    <div className='magic-bento-card__label'>{card.label}</div>
+                    <div className='magic-bento-card__label'>{cardLabel}</div>
                     <button
                       className='magic-bento-card__close-btn'
                       onClick={(e) => {
@@ -836,6 +860,19 @@ const MagicBento: React.FC<BentoProps> = ({
                       <p className='magic-bento-card__detailed-info'>
                         {card.detailedInfo}
                       </p>
+                    )}
+                    {card.technologies && card.technologies.length > 0 && (
+                      <div className='tech-badges-container'>
+                        {card.technologies.map((tech, techIndex) => (
+                          <TechBadge
+                            key={techIndex}
+                            icon={tech.icon}
+                            title={tech.title}
+                            href={tech.href}
+                            color={tech.color}
+                          />
+                        ))}
+                      </div>
                     )}
                     {card.isPrivate ? (
                       <div className='magic-bento-card__private-notice'>
@@ -860,7 +897,7 @@ const MagicBento: React.FC<BentoProps> = ({
               ) : (
                 <>
                   <div className='magic-bento-card__header'>
-                    <div className='magic-bento-card__label'>{card.label}</div>
+                    <div className='magic-bento-card__label'>{cardLabel}</div>
                   </div>
                   <div className='magic-bento-card__content'>
                     <h2 className='magic-bento-card__title'>{card.title}</h2>

@@ -8,20 +8,17 @@ import './Home.css'
 
 function Home() {
   return (
-    <>
-      <div id='main'>
-        <HeroSection />
-        <WelcomeSection />
-        <TechStackSection />
-        <AboutMeSection />
-        <div id='projects-job-container'>
-          <ProjectsSection />
-          <CurrentJobSection />
-        </div>
+    <div id='main'>
+      <HeroSection />
+      <WelcomeSection />
+      <TechStackSection />
+      <AboutMeSection />
+      <div id='projects-job-container'>
+        <ProjectsSection />
+        <CurrentJobSection />
       </div>
-    </>
+    </div>
   )
 }
 
 export default Home
-

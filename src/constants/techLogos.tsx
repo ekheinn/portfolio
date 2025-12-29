@@ -1,30 +1,30 @@
 import type { ReactNode } from 'react'
 import {
-  SiReact,
-  SiNextdotjs,
+  SiJavascript,
   SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiPostgresql,
-  SiMongodb,
-  SiPrisma,
-  SiDocker,
-  SiAmazonwebservices,
-  SiVercel,
-  SiGit,
-  SiJest,
-  SiCypress,
   SiPython,
   SiDjango,
+  SiGit,
+  SiReact,
+  SiVite,
+  SiDocker,
+  SiKubernetes,
+  SiPostgresql,
+  SiMongodb,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiExpress,
   SiFastapi,
   SiGraphql,
   SiRedis,
-  SiKubernetes,
-  SiTerraform,
-  SiJenkins,
+  SiVercel,
+  SiGithub,
+  SiGitlab,
   SiGithubactions,
+  SiNginx,
+  SiLinux,
 } from 'react-icons/si'
+import { TbDatabase } from 'react-icons/tb'
 
 export interface TechLogo {
   node: ReactNode
@@ -33,29 +33,12 @@ export interface TechLogo {
 }
 
 export const techLogos: TechLogo[] = [
-  { node: <SiReact />, title: 'React', href: 'https://react.dev' },
-  { node: <SiNextdotjs />, title: 'Next.js', href: 'https://nextjs.org' },
   {
-    node: <SiTypescript />,
-    title: 'TypeScript',
-    href: 'https://www.typescriptlang.org',
-  },
-  {
-    node: <SiTailwindcss />,
-    title: 'Tailwind CSS',
-    href: 'https://tailwindcss.com',
+    node: <SiJavascript />,
+    title: 'JavaScript',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
 
-  {
-    node: <SiNodedotjs />,
-    title: 'Node.js',
-    href: 'https://nodejs.org',
-  },
-  {
-    node: <SiExpress />,
-    title: 'Express.js',
-    href: 'https://expressjs.com',
-  },
   {
     node: <SiPython />,
     title: 'Python',
@@ -67,37 +50,21 @@ export const techLogos: TechLogo[] = [
     href: 'https://djangoproject.com',
   },
   {
-    node: <SiFastapi />,
-    title: 'FastAPI',
-    href: 'https://fastapi.tiangolo.com',
+    node: <SiGit />,
+    title: 'Git',
+    href: 'https://git-scm.com',
+  },
+  { node: <SiReact />, title: 'React', href: 'https://react.dev' },
+  {
+    node: <SiVite />,
+    title: 'Vite',
+    href: 'https://vitejs.dev',
   },
   {
-    node: <SiGraphql />,
-    title: 'GraphQL',
-    href: 'https://graphql.org',
+    node: <SiTypescript />,
+    title: 'TypeScript',
+    href: 'https://www.typescriptlang.org',
   },
-
-  {
-    node: <SiPostgresql />,
-    title: 'PostgreSQL',
-    href: 'https://postgresql.org',
-  },
-  {
-    node: <SiMongodb />,
-    title: 'MongoDB',
-    href: 'https://mongodb.com',
-  },
-  {
-    node: <SiRedis />,
-    title: 'Redis',
-    href: 'https://redis.io',
-  },
-  {
-    node: <SiPrisma />,
-    title: 'Prisma',
-    href: 'https://prisma.io',
-  },
-
   {
     node: <SiDocker />,
     title: 'Docker',
@@ -109,9 +76,44 @@ export const techLogos: TechLogo[] = [
     href: 'https://kubernetes.io',
   },
   {
-    node: <SiAmazonwebservices />,
-    title: 'AWS',
-    href: 'https://aws.amazon.com',
+    node: <SiPostgresql />,
+    title: 'PostgreSQL',
+    href: 'https://postgresql.org',
+  },
+  {
+    node: <SiMongodb />,
+    title: 'MongoDB',
+    href: 'https://mongodb.com',
+  },
+  {
+    node: <SiNodedotjs />,
+    title: 'Node.js',
+    href: 'https://nodejs.org',
+  },
+  {
+    node: <SiTailwindcss />,
+    title: 'Tailwind CSS',
+    href: 'https://tailwindcss.com',
+  },
+  {
+    node: <SiExpress />,
+    title: 'Express.js',
+    href: 'https://expressjs.com',
+  },
+  {
+    node: <SiFastapi />,
+    title: 'FastAPI',
+    href: 'https://fastapi.tiangolo.com',
+  },
+  {
+    node: <SiGraphql />,
+    title: 'GraphQL',
+    href: 'https://graphql.org',
+  },
+  {
+    node: <SiRedis />,
+    title: 'Redis',
+    href: 'https://redis.io',
   },
   {
     node: <SiVercel />,
@@ -119,26 +121,14 @@ export const techLogos: TechLogo[] = [
     href: 'https://vercel.com',
   },
   {
-    node: <SiTerraform />,
-    title: 'Terraform',
-    href: 'https://terraform.io',
-  },
-
-  {
-    node: <SiJest />,
-    title: 'Jest',
-    href: 'https://jestjs.io',
+    node: <SiGithub />,
+    title: 'GitHub',
+    href: 'https://github.com',
   },
   {
-    node: <SiCypress />,
-    title: 'Cypress',
-    href: 'https://cypress.io',
-  },
-
-  {
-    node: <SiGit />,
-    title: 'Git',
-    href: 'https://git-scm.com',
+    node: <SiGitlab />,
+    title: 'GitLab',
+    href: 'https://gitlab.com',
   },
   {
     node: <SiGithubactions />,
@@ -146,8 +136,18 @@ export const techLogos: TechLogo[] = [
     href: 'https://github.com/features/actions',
   },
   {
-    node: <SiJenkins />,
-    title: 'Jenkins',
-    href: 'https://jenkins.io',
+    node: <SiNginx />,
+    title: 'Nginx',
+    href: 'https://nginx.org',
+  },
+  {
+    node: <SiLinux />,
+    title: 'Linux',
+    href: 'https://www.linux.org',
+  },
+  {
+    node: <TbDatabase />,
+    title: 'NoSQL',
+    href: 'https://en.wikipedia.org/wiki/NoSQL',
   },
 ]

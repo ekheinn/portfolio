@@ -51,6 +51,10 @@
   margin-right: var(--logoloop-gap);
   font-size: var(--logoloop-logoHeight);
   line-height: 1;
+
+  svg {
+    color: rgb(112, 13, 13);
+  }
 }
 
 .logoloop--vertical .logoloop__item {

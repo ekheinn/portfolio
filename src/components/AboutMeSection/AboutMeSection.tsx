@@ -3,6 +3,7 @@ import ScrambledText from '../ScrambledText/ScrambledText'
 import myselfIMG from '../../assets/myself.png'
 import myselfBackIMG from '../../assets/myself-background.png'
 import './AboutMeSection.css'
+import swordIMG from '../../assets/sword.png'
 
 function AboutMeSection() {
   return (
@@ -23,6 +24,7 @@ function AboutMeSection() {
             />
             <img id='myself' alt='myself' src={myselfIMG} />
           </div>
+          <img src={swordIMG} className='myself-sword-detail' />
           <section id='myself-text'>
             <h2>Sobre mim...</h2>
 
@@ -34,14 +36,26 @@ function AboutMeSection() {
               scrambleChars={'.:'}
             >
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Laborum tenetur, ab eum ducimus corrupti, veritatis
-                praesentium consectetur labore repudiandae necessitatibus
-                sequi aperiam. Labore expedita, saepe laborum possimus
-                blanditiis alias reiciendis. <br /> Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Tempora, vel, sunt ipsa,
-                laborum fuga ea itaque et nulla eveniet ex alias
-                necessitatibus?
+                Sou um desenvolvedor que gosta de desafios e acredita que um bom
+                código vai muito além de ferramentas e habilidades técnicas,
+                tudo começa no pensamento e nas decisões tomadas desde o início
+                de um projeto. Atuo na área de tecnologia com foco na construção
+                de soluções seguras e bem estruturadas.
+              </p>
+              <br />
+              <p>
+                Ao longo da minha jornada, tive a oportunidade de contribuir em
+                projetos estratégicos, incluindo ferramentas de avaliação de
+                maturidade de segurança, análise de riscos e apoio à tomada de
+                decisão, sempre buscando unir visão técnica à praticidade.
+              </p>
+              <br />
+              <p>
+                Fora do código, gosto de manter o equilíbrio enfrentando novos
+                desafios, seja aprendendo algo novo ou me desafiando no skate.
+                Essa mentalidade de evolução constante também guia minha forma
+                de trabalhar: aprender, melhorar e construir soluções cada vez
+                mais sólidas e seguras.
               </p>
             </ScrambledText>
           </section>
@@ -52,4 +66,3 @@ function AboutMeSection() {
 }
 
 export default AboutMeSection
-
