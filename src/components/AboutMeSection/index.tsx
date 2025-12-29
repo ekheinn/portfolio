@@ -1,8 +1,8 @@
-import ClickSpark from '../ClickSpark/ClickSpark'
-import ScrambledText from '../ScrambledText/ScrambledText'
+import './AboutMeSection.css'
+import ClickSpark from '../ClickSpark'
+import ScrambledText from '../ScrambledText'
 import myselfIMG from '../../assets/myself.png'
 import myselfBackIMG from '../../assets/myself-background.png'
-import './AboutMeSection.css'
 import swordIMG from '../../assets/sword.png'
 
 function AboutMeSection() {

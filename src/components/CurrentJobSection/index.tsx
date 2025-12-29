@@ -1,6 +1,6 @@
-import { useMemo } from 'react'
-import Lanyard from '../Lanyard/Lanyard'
 import './CurrentJobSection.css'
+import { useMemo } from 'react'
+import Lanyard from '../Lanyard'
 
 function CurrentJobSection() {
   const CONTRACT_START_DATE = '2023-01-02'

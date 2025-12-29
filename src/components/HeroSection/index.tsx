@@ -1,10 +1,8 @@
+import './HeroSection.css'
 import { useRef, useState, useLayoutEffect } from 'react'
 import { motion } from 'motion/react'
-import LiquidEther from '../LiquidEther/LiquidEther'
-import RotatingText, {
-  type RotatingTextRef,
-} from '../RotatingText/RotatingText'
-import './HeroSection.css'
+import LiquidEther from '../LiquidEther'
+import RotatingText, { type RotatingTextRef } from '../RotatingText'
 
 const TEXTS = ['Full-Stack!', 'Back-End', 'Front-End', 'DevOps']
 const LIQUID_ETHER_COLORS = ['#ff0000', '#ff0000', '#520000']

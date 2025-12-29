@@ -1,6 +1,6 @@
-import { Outlet, useLocation } from 'react-router-dom'
-import Dock from '../Dock/Dock'
 import './Layout.css'
+import Dock from '../Dock'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useDockItems } from '../../constants/dockItems'
 import { useEffect } from 'react'
 

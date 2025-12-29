@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { routes } from './routes'
 import { ErroPage } from '../pages/Error'
-import Layout from '../components/Layout/Layout'
+import Layout from '../components/Layout'
 
 function RoutesApp() {
   return (

@@ -1,10 +1,10 @@
-import HeroSection from '../../components/HeroSection/HeroSection'
-import WelcomeSection from '../../components/WelcomeSection/WelcomeSection'
-import TechStackSection from '../../components/TechStackSection/TechStackSection'
-import AboutMeSection from '../../components/AboutMeSection/AboutMeSection'
-import ProjectsSection from '../../components/ProjectsSection/ProjectsSection'
-import CurrentJobSection from '../../components/CurrentJobSection/CurrentJobSection'
 import './Home.css'
+import HeroSection from '../../components/HeroSection'
+import WelcomeSection from '../../components/WelcomeSection'
+import TechStackSection from '../../components/TechStackSection'
+import AboutMeSection from '../../components/AboutMeSection'
+import ProjectsSection from '../../components/ProjectsSection'
+import CurrentJobSection from '../../components/CurrentJobSection'
 
 function Home() {
   return (

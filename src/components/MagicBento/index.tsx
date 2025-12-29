@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react'
 import { gsap } from 'gsap'
 import './MagicBento.css'
-import TechBadge, { type TechBadgeProps } from '../TechBadge/TechBadge'
+import TechBadge, { type TechBadgeProps } from '../TechBadge'
 import { MdOutlinePublic, MdOutlinePublicOff } from 'react-icons/md'
+import { LuSearchCode } from 'react-icons/lu'
 
 export interface BentoCardProps {
   color?: string
@@ -698,7 +699,7 @@ const MagicBento: React.FC<BentoProps> = ({
                             className='magic-bento-card__source-link'
                             onClick={(e) => e.stopPropagation()}
                           >
-                            Ver código fonte →
+                            Código fonte <LuSearchCode size={20} />
                           </a>
                         ) : null}
                       </div>
@@ -889,7 +890,7 @@ const MagicBento: React.FC<BentoProps> = ({
                         className='magic-bento-card__source-link'
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Ver código fonte →
+                        Código fonte <LuSearchCode size={20} />
                       </a>
                     ) : null}
                   </div>

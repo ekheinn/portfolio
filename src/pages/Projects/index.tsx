@@ -1,10 +1,10 @@
 import './Projects.css'
 import { Link } from 'react-router-dom'
-import MagicBento from '../../components/MagicBento/MagicBento'
+import MagicBento from '../../components/MagicBento'
 import { projectsData } from '../../constants/projects'
 import { useState, useEffect, useRef } from 'react'
-import SplitText from '../../components/SplitText/SplitText'
-import Switch from '../../components/Switch/Switch'
+import SplitText from '../../components/SplitText'
+import Switch from '../../components/Switch'
 import swordIMG from '../../assets/sword.png'
 import { TbArrowBackUp } from 'react-icons/tb'
 

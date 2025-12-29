@@ -1,5 +1,5 @@
 import './WelcomeSection.css'
-import TextType from '../TextType/TextType'
+import TextType from '../TextType'
 import { useEffect, useState } from 'react'
 import { TbCode } from 'react-icons/tb'
 import { LiaHorseHeadSolid } from 'react-icons/lia'

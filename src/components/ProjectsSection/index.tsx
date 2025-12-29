@@ -1,12 +1,12 @@
 import './ProjectsSection.css'
-import CardSwap, { Card } from '../CardSwap/CardSwap'
+import CardSwap, { Card } from '../CardSwap'
 import { TbReportAnalytics, TbShieldSearch } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 import { RiHomeGearLine } from 'react-icons/ri'
+import { IoIosArrowForward } from 'react-icons/io'
 import project1 from '../../assets/projects/maturit.png'
 import project2 from '../../assets/projects/cms.png'
 import project3 from '../../assets/projects/srh.png'
-import { IoIosArrowForward } from 'react-icons/io'
 
 function WindowButtons() {
   return (

@@ -1,4 +1,4 @@
-import type { BentoCardProps } from '../components/MagicBento/MagicBento'
+import type { BentoCardProps } from '../components/MagicBento'
 import {
   SiPython,
   SiDjango,
@@ -18,6 +18,36 @@ import { TbBrandOpenSource } from 'react-icons/tb'
 import { VscKey } from 'react-icons/vsc'
 
 export const projectsData: BentoCardProps[] = [
+  {
+    color: '#050000ff',
+    title: 'Portfólio',
+    description:
+      'Aplicação web desenvolvida para apresentar meus trabalhos, experiências e informações profissionais.',
+    detailedInfo:
+      'Este projeto foi criado com o objetivo de servir como um portfólio pessoal, reunindo projetos, habilidades e experiências profissionais em um único lugar. A aplicação prioriza uma interface limpa, navegação intuitiva e boas práticas de desenvolvimento, permitindo que visitantes conheçam melhor os trabalhos desenvolvidos e as tecnologias utilizadas. O código-fonte está disponível para consulta e evolução contínua.',
+    isPrivate: false,
+    sourceCodeUrl: 'https://github.com/ekheinn/portfolio',
+    technologies: [
+      {
+        icon: <SiReact />,
+        title: 'React',
+        href: 'https://react.dev',
+        color: '#61DAFB',
+      },
+      {
+        icon: <SiTypescript />,
+        title: 'TypeScript',
+        href: 'https://typescriptlang.org',
+        color: '#3178C6',
+      },
+      {
+        icon: <SiVite />,
+        title: 'Vite',
+        href: 'https://vitejs.dev',
+        color: '#646CFF',
+      },
+    ],
+  },
   {
     color: '#050000ff',
     title: 'IOC-Enrich',

@@ -233,6 +233,16 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       return magnitude * directionMultiplier * speedMultiplier
     }, [speed, direction, isVertical])
 
+    const shuffledLogos = useMemo(() => {
+      const shuffled = [...logos]
+      // Fisher-Yates shuffle algorithm
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      }
+      return shuffled
+    }, [logos])
+
     const updateDimensions = useCallback(() => {
       const containerWidth = containerRef.current?.clientWidth ?? 0
       const sequenceRect = seqRef.current?.getBoundingClientRect?.()
@@ -267,11 +277,11 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     useResizeObserver(
       updateDimensions,
       [containerRef, seqRef],
-      [logos, gap, logoHeight, isVertical],
+      [shuffledLogos, gap, logoHeight, isVertical],
     )
 
     useImageLoader(seqRef, updateDimensions, [
-      logos,
+      shuffledLogos,
       gap,
       logoHeight,
       isVertical,
@@ -384,12 +394,12 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
-            {logos.map((item, itemIndex) =>
+            {shuffledLogos.map((item, itemIndex) =>
               renderLogoItem(item, `${copyIndex}-${itemIndex}`),
             )}
           </ul>
         )),
-      [copyCount, logos, renderLogoItem],
+      [copyCount, shuffledLogos, renderLogoItem],
     )
 
     const containerStyle = useMemo(
