@@ -19,7 +19,6 @@
     line-height: 0.8;
 
     .scrambled-text {
-      /* width: 40vw; */
       margin: 0;
 
       white-space: normal;
@@ -71,6 +70,10 @@
     object-fit: cover;
     filter: invert(1);
     opacity: 0.1;
-    pointer-events: none;
+    transition: 0.5s ease all;
+
+    &:hover {
+      opacity: 0.2;
+    }
   }
 }
