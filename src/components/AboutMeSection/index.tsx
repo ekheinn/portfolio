@@ -1,8 +1,8 @@
-import ClickSpark from '../ClickSpark/ClickSpark'
-import ScrambledText from '../ScrambledText/ScrambledText'
+import './AboutMeSection.css'
+import ClickSpark from '../ClickSpark'
+import ScrambledText from '../ScrambledText'
 import myselfIMG from '../../assets/myself.png'
 import myselfBackIMG from '../../assets/myself-background.png'
-import './AboutMeSection.css'
 import swordIMG from '../../assets/sword.png'
 
 function AboutMeSection() {
@@ -10,8 +10,8 @@ function AboutMeSection() {
     <div id='myself-info-container'>
       <ClickSpark
         sparkColor='#fff'
-        sparkSize={10}
-        sparkRadius={20}
+        sparkSize={20}
+        sparkRadius={50}
         sparkCount={8}
         duration={400}
       >
@@ -31,8 +31,8 @@ function AboutMeSection() {
             <ScrambledText
               className='scrambled-text'
               radius={80}
-              duration={1.2}
-              speed={0.5}
+              duration={2}
+              speed={0.3}
               scrambleChars={'.:'}
             >
               <p>
@@ -42,19 +42,17 @@ function AboutMeSection() {
                 de um projeto. Atuo na área de tecnologia com foco na construção
                 de soluções seguras e bem estruturadas.
               </p>
-              <br />
               <p>
                 Ao longo da minha jornada, tive a oportunidade de contribuir em
                 projetos estratégicos, incluindo ferramentas de avaliação de
                 maturidade de segurança, análise de riscos e apoio à tomada de
                 decisão, sempre buscando unir visão técnica à praticidade.
               </p>
-              <br />
               <p>
                 Fora do código, gosto de manter o equilíbrio enfrentando novos
                 desafios, seja aprendendo algo novo ou me desafiando no skate.
                 Essa mentalidade de evolução constante também guia minha forma
-                de trabalhar: aprender, melhorar e construir soluções cada vez
+                de trabalhar, aprender, melhorar e construir soluções cada vez
                 mais sólidas e seguras.
               </p>
             </ScrambledText>

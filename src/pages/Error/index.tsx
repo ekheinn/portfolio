@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import FuzzyText from '../../components/FuzzyText/FuzzyText'
 import './error.css'
+import { Link } from 'react-router-dom'
+import FuzzyText from '../../components/FuzzyText'
 
 export const ErroPage = () => {
   return (

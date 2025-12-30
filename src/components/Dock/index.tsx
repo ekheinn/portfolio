@@ -17,7 +17,7 @@ import React, {
   useState,
 } from 'react'
 import { VscChromeClose, VscChevronUp } from 'react-icons/vsc'
-import GlassSurface from '../GlassSurface/GlassSurface'
+import GlassSurface from '../GlassSurface'
 
 import './Dock.css'
 

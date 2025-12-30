@@ -9,13 +9,17 @@
 
   margin: 5rem 0;
   gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .projects-title {
-  font-size: 3rem;
-  padding-bottom: 2rem;
+  font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
+  padding-bottom: clamp(1rem, 2vw, 2rem);
   font-weight: bold;
   margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .projects-nav {
@@ -27,6 +31,7 @@
   max-width: 60rem;
   padding: 0 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 
   .switch-container {
     flex-direction: column-reverse;
@@ -37,8 +42,8 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    height: 70px;
-    width: 70px;
+    height: clamp(60px, 8vw, 70px);
+    width: clamp(60px, 8vw, 70px);
     flex-shrink: 0;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 0.75rem 1.25rem;
@@ -51,6 +56,7 @@
     color: inherit;
     font-weight: 500;
     gap: 0.5rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.08);
@@ -59,7 +65,7 @@
     }
 
     svg {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2vw, 1.2rem);
       transition: transform 0.3s ease;
     }
 
@@ -83,7 +89,8 @@
     padding: 0 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    min-width: 200px;
   }
 }
 
@@ -93,7 +100,8 @@
   justify-content: center;
   width: 100%;
   max-width: 70em;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  box-sizing: border-box;
 
   transition: all 1s ease;
 }
@@ -105,15 +113,16 @@
   top: 50%;
   pointer-events: none;
 
-  width: 18vw;
+  width: clamp(0px, 18vw, 22rem);
   max-width: 22rem;
 
   object-fit: cover;
 
-  height: 88vh;
+  height: clamp(0px, 88vh, 1000px);
   max-height: 1000px;
   will-change: transform;
   transition: transform 0.1s ease-out;
+  z-index: -1;
 }
 
 .sword-left {
@@ -123,4 +132,121 @@
 
 .sword-right {
   right: 0;
+}
+
+/* Media Queries para diferentes resoluções */
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .projects-page {
+    margin: 2rem 0;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .projects-title {
+    padding-bottom: 1rem;
+  }
+
+  .projects-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+
+    .nav-buttons {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      min-height: 60px;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    p {
+      padding: 0;
+      font-size: 0.85rem;
+      min-width: unset;
+    }
+  }
+
+  .sword-detail {
+    display: none;
+  }
+
+  #bento {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile médio (481px - 599px) */
+@media (min-width: 481px) and (max-width: 599px) {
+  .projects-page {
+    margin: 3rem 0;
+    padding: 0 0.75rem;
+  }
+
+  .projects-nav {
+    gap: 1.5rem;
+    padding: 0 0.75rem;
+
+    .nav-buttons {
+      height: 65px;
+      width: 65px;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .sword-detail {
+    width: 12vw;
+    opacity: 0.3;
+  }
+}
+
+/* Tablet (600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .projects-page {
+    margin: 4rem 0;
+  }
+
+  .projects-nav {
+    gap: 1.5rem;
+
+    p {
+      font-size: 0.92rem;
+    }
+  }
+
+  .sword-detail {
+    width: 15vw;
+    opacity: 0.4;
+  }
+}
+
+/* Tablet grande (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-nav {
+    max-width: 55rem;
+  }
+
+  .sword-detail {
+    width: 16vw;
+  }
+}
+
+/* Desktop pequeno (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .projects-nav {
+    max-width: 58rem;
+  }
+}
+
+/* Desktop grande (acima de 1280px) */
+@media (min-width: 1281px) {
+  .projects-page {
+    margin: 5rem 0;
+  }
 }

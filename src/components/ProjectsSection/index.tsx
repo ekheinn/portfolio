@@ -1,12 +1,12 @@
 import './ProjectsSection.css'
-import CardSwap, { Card } from '../CardSwap/CardSwap'
+import CardSwap, { Card } from '../CardSwap'
 import { TbReportAnalytics, TbShieldSearch } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 import { RiHomeGearLine } from 'react-icons/ri'
+import { IoIosArrowForward } from 'react-icons/io'
 import project1 from '../../assets/projects/maturit.png'
 import project2 from '../../assets/projects/cms.png'
 import project3 from '../../assets/projects/srh.png'
-import { IoIosArrowForward } from 'react-icons/io'
 
 function WindowButtons() {
   return (
@@ -57,21 +57,23 @@ function ProjectsSection() {
         </Link>
       </div>
 
-      <CardSwap verticalDistance={120} cardDistance={70} delay={6000}>
-        {projects.map((project, index) => {
-          return (
-            <Card key={index}>
-              <h3>
-                <div>
-                  <project.icon /> {project.name}
-                </div>
-                <WindowButtons />
-              </h3>
-              <img alt='project-screnshot' src={project.image} />
-            </Card>
-          )
-        })}
-      </CardSwap>
+      <div id='projects-cards'>
+        <CardSwap verticalDistance={120} cardDistance={70} delay={6000}>
+          {projects.map((project, index) => {
+            return (
+              <Card key={index}>
+                <h3>
+                  <div>
+                    <project.icon /> {project.name}
+                  </div>
+                  <WindowButtons />
+                </h3>
+                <img alt='project-screnshot' src={project.image} />
+              </Card>
+            )
+          })}
+        </CardSwap>
+      </div>
     </div>
   )
 }

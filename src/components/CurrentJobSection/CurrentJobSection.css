@@ -2,6 +2,7 @@
   position: relative;
 
   width: 100vw;
+  height: 90vh;
 
   display: flex;
   justify-content: flex-end;
@@ -31,6 +32,7 @@
     z-index: 9;
 
     width: 100%;
+    height: 100%;
   }
 
   .company-description {
@@ -41,5 +43,94 @@
   .contract-info {
     font-size: 0.8rem;
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 1024px) {
+  #current-job {
+    height: 85vh;
+
+    &::after {
+      width: calc(100% - 10rem);
+    }
+
+    #current-job-text {
+      max-width: 35rem;
+      right: 15rem;
+      padding: 8rem 12rem 0 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #current-job {
+    height: auto;
+    min-height: 70vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1rem;
+
+    &::after {
+      width: calc(100% - 4rem);
+    }
+
+    #current-job-text {
+      position: relative;
+      max-width: 100%;
+      right: auto;
+      top: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+      width: 100%;
+
+      h2 {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+      }
+
+      p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        line-height: 1.6;
+        margin: 1rem 0;
+      }
+    }
+
+    #lanyard-object {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      min-height: 250px;
+      margin-bottom: 1rem;
+    }
+
+    .company-description {
+      font-size: clamp(0.85rem, 2.2vw, 0.9rem);
+    }
+
+    .contract-info {
+      font-size: clamp(0.75rem, 2vw, 0.8rem);
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #current-job {
+    min-height: 65vh;
+
+    &::after {
+      width: calc(100% - 2rem);
+    }
+
+    #current-job-text {
+      p {
+        margin: 0.75rem 0;
+      }
+    }
+
+    #lanyard-object {
+      height: 35vh;
+      min-height: 200px;
+    }
   }
 }

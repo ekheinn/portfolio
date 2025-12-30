@@ -2,6 +2,7 @@
   width: 100vw;
   height: 40vh;
   max-height: 30rem;
+  min-height: 20rem;
 
   display: flex;
   align-items: center;
@@ -18,17 +19,31 @@
   height: 100%;
   max-height: 30rem;
   position: absolute;
-  border-bottom: 3px solid rgb(19, 19, 19);
+}
+
+#background::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgb(19, 19, 19);
 }
 
 #description {
   z-index: 10;
   text-align: center;
   pointer-events: none;
+  padding: 0 1rem;
 
   h1,
   h2 {
     margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
   }
 
   h2 {
@@ -37,6 +52,8 @@
     justify-content: center;
     align-items: center;
     color: #ffe3e3;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    flex-wrap: wrap;
 
     .rotating-text-wrapper {
       position: relative;
@@ -62,6 +79,59 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #panel {
+    height: 35vh;
+    min-height: 18rem;
+  }
+
+  #background {
+    max-height: 25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #panel {
+    height: 30vh;
+    min-height: 15rem;
+    max-height: 20rem;
+  }
+
+  #background {
+    max-height: 20rem;
+  }
+
+  #description {
+    padding: 0 0.75rem;
+
+    h2 {
+      gap: 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #panel {
+    height: 25vh;
+    min-height: 12rem;
+    max-height: 18rem;
+  }
+
+  #background {
+    max-height: 18rem;
+  }
+
+  #description {
+    padding: 0 0.5rem;
+
+    h2 {
+      .rotating-text-wrapper {
+        padding: 0 0.25rem;
+      }
     }
   }
 }
