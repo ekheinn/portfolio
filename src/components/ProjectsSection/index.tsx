@@ -57,21 +57,23 @@ function ProjectsSection() {
         </Link>
       </div>
 
-      <CardSwap verticalDistance={120} cardDistance={70} delay={6000}>
-        {projects.map((project, index) => {
-          return (
-            <Card key={index}>
-              <h3>
-                <div>
-                  <project.icon /> {project.name}
-                </div>
-                <WindowButtons />
-              </h3>
-              <img alt='project-screnshot' src={project.image} />
-            </Card>
-          )
-        })}
-      </CardSwap>
+      <div id='projects-cards'>
+        <CardSwap verticalDistance={120} cardDistance={70} delay={6000}>
+          {projects.map((project, index) => {
+            return (
+              <Card key={index}>
+                <h3>
+                  <div>
+                    <project.icon /> {project.name}
+                  </div>
+                  <WindowButtons />
+                </h3>
+                <img alt='project-screnshot' src={project.image} />
+              </Card>
+            )
+          })}
+        </CardSwap>
+      </div>
     </div>
   )
 }

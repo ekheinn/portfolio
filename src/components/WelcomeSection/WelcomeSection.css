@@ -1,11 +1,11 @@
 #welcome-text {
-  font-size: 1.5rem;
   font-weight: bold;
 
   color: rgb(151, 151, 151);
 
-  max-width: 40rem;
+  max-width: 35rem;
   text-align: center;
+  padding: 0 1rem;
 
   display: flex;
   flex-direction: column;
@@ -13,9 +13,31 @@
 
   svg {
     margin-bottom: 0.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
   }
   p {
     font-size: 0.9rem;
     font-weight: normal;
+  }
+}
+
+@media (max-width: 1024px) {
+  #welcome-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #welcome-text {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+
+    span {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
   }
 }

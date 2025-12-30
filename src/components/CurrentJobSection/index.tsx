@@ -1,8 +1,9 @@
 import './CurrentJobSection.css'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Lanyard from '../Lanyard'
 
 function CurrentJobSection() {
+  const [showLanyard, setShowLanyard] = useState(true)
   const CONTRACT_START_DATE = '2023-01-02'
 
   const contractInfo = useMemo(() => {
@@ -41,11 +42,30 @@ function CurrentJobSection() {
     }
   }, [])
 
+  useEffect(() => {
+    const updateDimensions = () => {
+      const width = window.innerWidth
+
+      if (width <= 890) {
+        setShowLanyard(false)
+      } else {
+        setShowLanyard(true)
+      }
+    }
+
+    updateDimensions()
+    window.addEventListener('resize', updateDimensions)
+
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [])
+
   return (
     <div id='current-job'>
-      <div id='lanyard-object'>
-        <Lanyard position={[0, 0, 30]} fov={15} />
-      </div>
+      {showLanyard && (
+        <div id='lanyard-object'>
+          <Lanyard position={[0, 0, 30]} fov={15} />
+        </div>
+      )}
       <div id='current-job-text'>
         <h2>Onde atuo hoje?</h2>
 
