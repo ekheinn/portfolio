@@ -263,8 +263,13 @@
   margin: 0;
 }
 
+.magic-bento-card__link-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .magic-bento-card__source-link {
-  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -278,7 +283,6 @@
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
-  align-self: flex-end;
 }
 
 .magic-bento-card__source-link:hover {

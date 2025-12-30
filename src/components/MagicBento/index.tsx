@@ -4,6 +4,7 @@ import './MagicBento.css'
 import TechBadge, { type TechBadgeProps } from '../TechBadge'
 import { MdOutlinePublic, MdOutlinePublicOff } from 'react-icons/md'
 import { LuSearchCode } from 'react-icons/lu'
+import { TbLayoutNavbarCollapseFilled } from 'react-icons/tb'
 
 export interface BentoCardProps {
   color?: string
@@ -13,6 +14,7 @@ export interface BentoCardProps {
   disableAnimations?: boolean
   detailedInfo?: string
   sourceCodeUrl?: string
+  accessUrl?: string
   isPrivate?: boolean
   technologies?: TechBadgeProps[]
 }
@@ -595,13 +597,13 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         {cardData.map((card, index) => {
           const isExpanded = expandedCardIndex === index
-          const cardLabel = card.isPrivate ? (
+          const cardLabel = card.sourceCodeUrl ? (
             <>
-              <MdOutlinePublicOff /> Privado
+              <MdOutlinePublic /> Público
             </>
           ) : (
             <>
-              <MdOutlinePublic /> Público
+              <MdOutlinePublicOff /> Privado
             </>
           )
           const baseClassName = `magic-bento-card ${
@@ -684,24 +686,39 @@ const MagicBento: React.FC<BentoProps> = ({
                             ))}
                           </div>
                         )}
-                        {card.isPrivate ? (
-                          <div className='magic-bento-card__private-notice'>
-                            <p>
-                              ⚠️ Este código foi desenvolvido em um ambiente
-                              privado e não está disponível publicamente.
-                            </p>
-                          </div>
-                        ) : card.sourceCodeUrl ? (
-                          <a
-                            href={card.sourceCodeUrl}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='magic-bento-card__source-link'
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            Código fonte <LuSearchCode size={20} />
-                          </a>
-                        ) : null}
+
+                        <div className='magic-bento-card__link-buttons'>
+                          {card.accessUrl && (
+                            <a
+                              href={card.accessUrl}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              onClick={(e) => e.stopPropagation()}
+                              className='magic-bento-card__source-link'
+                            >
+                              <TbLayoutNavbarCollapseFilled size={20} /> Acessar
+                            </a>
+                          )}
+
+                          {card.sourceCodeUrl ? (
+                            <a
+                              href={card.sourceCodeUrl}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='magic-bento-card__source-link'
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Código fonte <LuSearchCode size={20} />
+                            </a>
+                          ) : (
+                            <div className='magic-bento-card__private-notice'>
+                              <p>
+                                ⚠️ O código foi desenvolvido em um ambiente
+                                privado e não está disponível publicamente.
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </>
                   ) : (
@@ -875,24 +892,39 @@ const MagicBento: React.FC<BentoProps> = ({
                         ))}
                       </div>
                     )}
-                    {card.isPrivate ? (
-                      <div className='magic-bento-card__private-notice'>
-                        <p>
-                          ⚠️ Este código foi desenvolvido em um ambiente privado
-                          e não está disponível publicamente.
-                        </p>
-                      </div>
-                    ) : card.sourceCodeUrl ? (
-                      <a
-                        href={card.sourceCodeUrl}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='magic-bento-card__source-link'
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Código fonte <LuSearchCode size={20} />
-                      </a>
-                    ) : null}
+
+                    <div className='magic-bento-card__link-buttons'>
+                      {card.accessUrl && (
+                        <a
+                          href={card.accessUrl}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          onClick={(e) => e.stopPropagation()}
+                          className='magic-bento-card__source-link'
+                        >
+                          <TbLayoutNavbarCollapseFilled size={20} /> Acessar
+                        </a>
+                      )}
+
+                      {card.sourceCodeUrl ? (
+                        <a
+                          href={card.sourceCodeUrl}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='magic-bento-card__source-link'
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Código fonte <LuSearchCode size={20} />
+                        </a>
+                      ) : (
+                        <div className='magic-bento-card__private-notice'>
+                          <p>
+                            ⚠️ O código foi desenvolvido em um ambiente privado
+                            e não está disponível publicamente.
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </>
               ) : (
