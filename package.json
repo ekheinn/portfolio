@@ -10,14 +10,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.0",
     "@react-three/rapier": "^2.2.0",
-    "gh-pages": "^6.3.0",
     "gsap": "^3.13.0",
     "meshline": "^3.3.1",
     "motion": "^12.23.24",
@@ -28,6 +27,7 @@
     "three": "^0.181.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
