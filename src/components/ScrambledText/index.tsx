@@ -27,58 +27,78 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   children,
 }) => {
   const rootRef = useRef<HTMLDivElement | null>(null)
-  const charsRef = useRef<HTMLElement[]>([])
+  const wordsRef = useRef<HTMLElement[]>([])
 
   useEffect(() => {
     if (!rootRef.current) return
 
-    const split = SplitText.create(rootRef.current.querySelector('p'), {
-      type: 'chars',
-      charsClass: 'char',
-    })
-    charsRef.current = split.chars as HTMLElement[]
+    const splits: SplitText[] = []
+    let handleMove: ((e: PointerEvent) => void) | null = null
 
-    charsRef.current.forEach((c) => {
-      gsap.set(c, {
-        display: 'inline-block',
-        attr: { 'data-content': c.innerHTML },
+    // Wait for next tick to ensure DOM is fully rendered
+    const timeoutId = setTimeout(() => {
+      if (!rootRef.current) return
+
+      // Find all paragraph elements within the container
+      const paragraphs = rootRef.current.querySelectorAll('p')
+      wordsRef.current = []
+
+      paragraphs.forEach((p) => {
+        const split = SplitText.create(p, {
+          type: 'words',
+          wordsClass: 'word',
+        })
+        splits.push(split)
+        wordsRef.current.push(...(split.words as HTMLElement[]))
       })
-    })
 
-    const handleMove = (e: PointerEvent) => {
-      charsRef.current.forEach((c) => {
-        const { left, top, width, height } = c.getBoundingClientRect()
-        const dx = e.clientX - (left + width / 2)
-        const dy = e.clientY - (top + height / 2)
-        const dist = Math.hypot(dx, dy)
-
-        if (dist < radius) {
-          gsap.to(c, {
-            overwrite: true,
-            duration: duration * (1 - dist / radius),
-            scrambleText: {
-              text: (c as HTMLElement).dataset.content || '',
-              chars: scrambleChars,
-              speed,
-            },
-            ease: 'none',
-          })
-        }
+      wordsRef.current.forEach((word) => {
+        gsap.set(word, {
+          display: 'inline-block',
+          attr: { 'data-content': word.innerHTML },
+        })
       })
-    }
 
-    const el = rootRef.current
-    el.addEventListener('pointermove', handleMove)
+      handleMove = (e: PointerEvent) => {
+        wordsRef.current.forEach((word) => {
+          const { left, top, width, height } = word.getBoundingClientRect()
+          const dx = e.clientX - (left + width / 2)
+          const dy = e.clientY - (top + height / 2)
+          const dist = Math.hypot(dx, dy)
+
+          if (dist < radius) {
+            gsap.to(word, {
+              overwrite: true,
+              duration: duration * (1 - dist / radius),
+              scrambleText: {
+                text: (word as HTMLElement).dataset.content || '',
+                chars: scrambleChars,
+                speed,
+              },
+              ease: 'none',
+            })
+          }
+        })
+      }
+
+      const el = rootRef.current
+      if (handleMove) {
+        el.addEventListener('pointermove', handleMove)
+      }
+    }, 0)
 
     return () => {
-      el.removeEventListener('pointermove', handleMove)
-      split.revert()
+      clearTimeout(timeoutId)
+      if (rootRef.current && handleMove) {
+        rootRef.current.removeEventListener('pointermove', handleMove)
+      }
+      splits.forEach((split) => split.revert())
     }
   }, [radius, duration, speed, scrambleChars])
 
   return (
     <div ref={rootRef} className={`text-block ${className}`} style={style}>
-      <p>{children}</p>
+      {children}
     </div>
   )
 }
