@@ -3,7 +3,7 @@
   font-size: clamp(16px, 2vw, 14px);
 }
 
-.char {
+.word {
   will-change: transform;
   display: inline-block;
 }

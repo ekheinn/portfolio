@@ -31,8 +31,8 @@ function AboutMeSection() {
             <ScrambledText
               className='scrambled-text'
               radius={80}
-              duration={1.2}
-              speed={0.5}
+              duration={2}
+              speed={0.3}
               scrambleChars={'.:'}
             >
               <p>
@@ -42,14 +42,12 @@ function AboutMeSection() {
                 de um projeto. Atuo na área de tecnologia com foco na construção
                 de soluções seguras e bem estruturadas.
               </p>
-              <br />
               <p>
                 Ao longo da minha jornada, tive a oportunidade de contribuir em
                 projetos estratégicos, incluindo ferramentas de avaliação de
                 maturidade de segurança, análise de riscos e apoio à tomada de
                 decisão, sempre buscando unir visão técnica à praticidade.
               </p>
-              <br />
               <p>
                 Fora do código, gosto de manter o equilíbrio enfrentando novos
                 desafios, seja aprendendo algo novo ou me desafiando no skate.
