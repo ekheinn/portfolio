@@ -6,7 +6,7 @@ import RoutesApp from './routes'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Routes>
         <Route path='/*' element={<RoutesApp />} />
       </Routes>
