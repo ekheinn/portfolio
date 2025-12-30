@@ -10,8 +10,8 @@ function AboutMeSection() {
     <div id='myself-info-container'>
       <ClickSpark
         sparkColor='#fff'
-        sparkSize={10}
-        sparkRadius={20}
+        sparkSize={20}
+        sparkRadius={50}
         sparkCount={8}
         duration={400}
       >
@@ -54,7 +54,7 @@ function AboutMeSection() {
                 Fora do código, gosto de manter o equilíbrio enfrentando novos
                 desafios, seja aprendendo algo novo ou me desafiando no skate.
                 Essa mentalidade de evolução constante também guia minha forma
-                de trabalhar: aprender, melhorar e construir soluções cada vez
+                de trabalhar, aprender, melhorar e construir soluções cada vez
                 mais sólidas e seguras.
               </p>
             </ScrambledText>
