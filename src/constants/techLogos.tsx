@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { FiFigma } from 'react-icons/fi'
 import {
   SiJavascript,
   SiTypescript,
@@ -23,6 +24,10 @@ import {
   SiGithubactions,
   SiNginx,
   SiLinux,
+  SiGrafana,
+  SiKeycloak,
+  SiSwagger,
+  SiFlask,
 } from 'react-icons/si'
 import { TbDatabase } from 'react-icons/tb'
 
@@ -149,5 +154,30 @@ export const techLogos: TechLogo[] = [
     node: <TbDatabase />,
     title: 'NoSQL',
     href: 'https://en.wikipedia.org/wiki/NoSQL',
+  },
+  {
+    node: <FiFigma />,
+    title: 'Figma',
+    href: 'https://www.figma.com/',
+  },
+  {
+    node: <SiGrafana />,
+    title: 'Grafana',
+    href: 'https://www.grafana.com/',
+  },
+  {
+    node: <SiKeycloak />,
+    title: 'Keycloak',
+    href: 'https://www.keycloak.org/',
+  },
+  {
+    node: <SiSwagger />,
+    title: 'Swagger',
+    href: 'https://swagger.io/',
+  },
+  {
+    node: <SiFlask />,
+    title: 'Flask',
+    href: 'https://flask.palletsprojects.com/',
   },
 ]

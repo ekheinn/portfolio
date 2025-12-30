@@ -25,7 +25,6 @@ export const projectsData: BentoCardProps[] = [
       'Aplicação web desenvolvida para apresentar meus trabalhos, experiências e informações profissionais.',
     detailedInfo:
       'Este projeto foi criado com o objetivo de servir como um portfólio pessoal, reunindo projetos, habilidades e experiências profissionais em um único lugar. A aplicação prioriza uma interface limpa, navegação intuitiva e boas práticas de desenvolvimento, permitindo que visitantes conheçam melhor os trabalhos desenvolvidos e as tecnologias utilizadas. O código-fonte está disponível para consulta e evolução contínua.',
-    isPrivate: false,
     sourceCodeUrl: 'https://github.com/ekheinn/portfolio',
     technologies: [
       {
@@ -50,12 +49,58 @@ export const projectsData: BentoCardProps[] = [
   },
   {
     color: '#050000ff',
+    title: 'Central de Ajuda - Grupo NTSec',
+    description:
+      'Central de Ajuda desenvolvida para o aplicativo Grupo NTSec, oferecendo uma plataforma completa de suporte e documentação para os usuários.',
+    detailedInfo:
+      'O Help Center é uma aplicação web que serve como central de ajuda e suporte para os usuários do aplicativo Grupo NTSec. A plataforma oferece acesso fácil a artigos de ajuda, guias, documentação e canais de contato com a equipe de suporte.',
+    accessUrl: 'https://help-center.grupontsec.com.br/',
+    technologies: [
+      {
+        icon: <SiReact />,
+        title: 'React',
+        href: 'https://react.dev',
+        color: '#61DAFB',
+      },
+      {
+        icon: <SiTypescript />,
+        title: 'TypeScript',
+        href: 'https://typescriptlang.org',
+        color: '#3178C6',
+      },
+      {
+        icon: <SiVite />,
+        title: 'Vite',
+        href: 'https://vitejs.dev',
+        color: '#646CFF',
+      },
+      {
+        icon: <SiDocker />,
+        title: 'Docker',
+        href: 'https://docker.com',
+        color: '#2496ED',
+      },
+      {
+        icon: <SiKubernetes />,
+        title: 'Kubernetes',
+        href: 'https://kubernetes.com',
+        color: '#2496ED',
+      },
+      {
+        icon: <SiNginx />,
+        title: 'Nginx',
+        href: 'https://nginx.org',
+        color: '#009639',
+      },
+    ],
+  },
+  {
+    color: '#050000ff',
     title: 'IOC-Enrich',
     description:
       'Enriquecimento e correlação de Indicadores de Comprometimento (IOCs)',
     detailedInfo:
       'Sistema desenvolvido para enriquecer e correlacionar Indicadores de Comprometimento (IOCs) em ambientes de segurança. O projeto permite a análise automatizada de dados de segurança, facilitando a identificação de padrões e ameaças potenciais.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiJavascript />,
@@ -108,7 +153,6 @@ export const projectsData: BentoCardProps[] = [
       'Automação e apoio à criação de apresentações baseadas em planilhas',
     detailedInfo:
       'Ferramenta de automação desenvolvida para facilitar a criação de apresentações a partir de dados de planilhas. O Exgrid automatiza processos manuais, reduzindo significativamente o tempo necessário para gerar apresentações profissionais e consistentes.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiDjango />,
@@ -148,7 +192,6 @@ export const projectsData: BentoCardProps[] = [
     description: 'Avaliação de maturidade e análise de riscos organizacionais',
     detailedInfo:
       'Sistema completo para avaliação de maturidade tecnológica e análise de riscos organizacionais. O MaturIT oferece uma plataforma integrada para gestão de avaliações, geração de relatórios detalhados e acompanhamento de métricas de maturidade ao longo do tempo.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiReact />,
@@ -200,7 +243,6 @@ export const projectsData: BentoCardProps[] = [
     description: 'Gerenciamento centralizado de ativos e inventário de rede',
     detailedInfo:
       'Plataforma de gerenciamento centralizado para ativos de TI e inventário de rede. O Nexus fornece uma visão unificada de todos os ativos da organização, facilitando o controle, monitoramento e manutenção da infraestrutura de rede.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiJavascript />,
@@ -240,7 +282,6 @@ export const projectsData: BentoCardProps[] = [
     description: 'Automação de relatórios e análises de métricas do Cloudflare',
     detailedInfo:
       'Sistema de automação para geração de relatórios e análises de métricas do Cloudflare. O SRH integra-se com as APIs do Cloudflare para coletar dados, processar métricas e gerar relatórios automatizados, otimizando o monitoramento e análise de performance.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiReact />,
@@ -292,7 +333,6 @@ export const projectsData: BentoCardProps[] = [
     description: 'Sistema de gerenciamento de conteúdo corporativo',
     detailedInfo:
       'Sistema de gerenciamento de conteúdo desenvolvido especificamente para as necessidades corporativas do Grupo NTSec. O CMS oferece uma interface intuitiva para criação, edição e publicação de conteúdo, com recursos avançados de controle de acesso e versionamento.',
-    isPrivate: true,
     technologies: [
       {
         icon: <SiReact />,
@@ -334,12 +374,10 @@ export const projectsData: BentoCardProps[] = [
   },
   {
     color: '#050000ff',
-    title: 'APP Grupo NTSec - API',
-    description:
-      'API backend para integração e suporte ao aplicativo do Grupo NTSec',
+    title: 'API - APP Grupo NTSec',
+    description: 'API para integração e suporte ao aplicativo do Grupo NTSec',
     detailedInfo:
-      'API backend robusta desenvolvida para suportar o aplicativo móvel do Grupo NTSec. A API fornece endpoints seguros para autenticação, gerenciamento de dados, notificações e integração com outros sistemas corporativos, garantindo alta disponibilidade e escalabilidade.',
-    isPrivate: true,
+      'API robusta desenvolvida para suportar o aplicativo móvel do Grupo NTSec. A API fornece endpoints seguros para autenticação, gerenciamento de dados, notificações e integração com outros sistemas corporativos, garantindo alta disponibilidade e escalabilidade.',
     technologies: [
       {
         icon: <SiPython />,
